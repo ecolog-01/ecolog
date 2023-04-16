@@ -1,0 +1,92 @@
+@font-face{
+    font-family:nunito;
+    src:url("../fonts/nunito.ttf");
+}
+*{
+    font-family: nunito, sans-serif;
+}
+body{
+    margin:0;
+    min-height:100vh;
+}
+#container{
+    padding: 20px;
+}
+.input{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: block;
+    margin: 10px 0;
+    outline: none;
+    border: solid 1px #000;
+}
+.input[type="button"]{
+    background-color: #000;
+    color: #FFF;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.input[type="button"]:hover{
+    background-color: #444;
+    border-color: #444;
+}
+#load{
+    margin-top: 60px;
+}
+#display{
+    text-align: center;
+}
+#count{
+    margin: 10px;
+    text-align: left;
+}
+.row{
+    display: flex;
+    padding: 6px 10px;
+    text-align: left;
+}
+.row>div{
+    width: 100%;
+    flex: 1;
+}
+.row>div:nth-child(2){
+    flex: 2;
+}
+.row>div:nth-child(3){
+    flex: 6;
+}
+.row-header{
+    border-bottom: solid 1px #DDD;
+    font-weight: bold;
+}
+.del{
+    background-color: #000;
+    text-align: center;
+    color: #FFF;
+    font-size: 10pt;
+    padding: 1px 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.del:hover{
+    background-color: #444;
+    border-color: #444;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
