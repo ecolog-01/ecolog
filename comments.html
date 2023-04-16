@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="css/style2.css" />
+		<title>Comments</title>
+	</head>
+	<body>
+		<section id="container">
+			<form id="myForm">
+				<textarea name="comment" class="input"></textarea>
+				<input type="button" value="Ajouter ce commentaire" id="myButton" class="input" />
+			</form>
+
+			<div id="display">
+				
+			</div>
+
+		</section>
+
+		<script>
+			document.body.onload=function(){
+				get();
+			}
+
+			document.getElementById("myButton").addEventListener(
+				"click",
+				function(){
+					post();
+				}
+			);
+				
+			function get(){
+				fetch("back/get.php")
+						.then((res)=>res.text())
+						.then((res)=>{
+							document.getElementById("display").innerHTML=res;
+						});
+					document.getElementById("display").innerHTML='<img src="images/load.gif" id="load" />';
+			}
+
+			function post(){
+				data=new FormData(document.getElementById("myForm"));
+				fetch("back/post.php",{
+					method:"POST",
+					body:data
+				})
+					.then((res)=>res.text())
+					.then((res)=>get())
+			}
+
+			function del(id){
+				data=new FormData();
+				data.append("id",id);
+				data.append("del","yes");
+				fetch("back/del.php",{
+					method:"POST",
+					body:data
+				})
+					.then((res)=>res.text())
+					.then((res)=>get())
+			}
+		</script>
+	</body>
+</html>
